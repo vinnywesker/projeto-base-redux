@@ -4,6 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
+/backup antigo para usar no redux
 
 # testing
 /coverage

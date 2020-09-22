@@ -1,26 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+import { setText } from './Reducer'
+
+import { useSelector, useDispatch } from 'react-redux'
+
+export default props => {
+    const dispatch = useDispatch()
+
+    const Texto = useSelector(state => { return state.text }) 
+
+    return (
+    <div>
+        <h1>Titulo: </h1>
+        <p>Mensagem: {Texto}</p>
+        <button
+            onClick={() => {
+                dispatch(setText("Mudar Pra esse ..."))
+            }
+            }>
+            Clica em min rsrs
+        </button>
     </div>
-  );
+    )
 }
-
-export default App;
