@@ -5,17 +5,19 @@ import { setText } from './Reducer'
 import { useSelector, useDispatch } from 'react-redux'
 
 export default props => {
-    const dispatch = useDispatch()
+    const dispatch = useDispatch() //usado para despachar uma ação
 
-    const Texto = useSelector(state => { return state.text }) 
+    const textoMensagem = useSelector(state => { return state.textMensagem }) // usado para pegar uma ação
+    const textoTitulo = useSelector(state => { return state.textTitulo })
 
     return (
     <div>
-        <h1>Titulo: </h1>
-        <p>Mensagem: {Texto}</p>
+        <h1>Titulo: {textoTitulo}</h1>
+        <p>Mensagem: {textoMensagem}</p>
         <button
             onClick={() => {
-                dispatch(setText("Mudar Pra esse ..."))
+                dispatch(setText('SET_TEXT_M','Essa é minha mensagem'))
+                dispatch(setText('SET_TEXT_T','Esse é meu título'))
             }
             }>
             Clica em min rsrs

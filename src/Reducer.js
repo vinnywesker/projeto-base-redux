@@ -1,21 +1,25 @@
 import { createStore } from 'redux';
 
-export function setText(texto) {
-  return {
-    type: 'SET_TEXT',
-    text: texto
-  }
+export function setText(tipo, texto) {
+    return {
+        type: tipo,
+        text: texto
+    }
 }
 
-const initialState = { text: 'Este texto' }
+const initialState = { 
+    textTitulo: 'Vinicius e fodao', 
+    textMensagem: 'Ele aprendeu REDUX'  
+} // precisa colocar o nome do objeto
 
 function reducer(state = initialState, action) {
-  switch (action.type) {
-    case 'SET_TEXT':
-      console.log(state)
-      return { ...state, text: action.text }
-    default:
-      return state
-  }
+    switch (action.type) {
+        case 'SET_TEXT_T':
+            return { ...state, textTitulo: action.text }
+        case 'SET_TEXT_M':
+            return { ...state, textMensagem: action.text }
+        default:
+            return state
+    }
 }
 export default createStore(reducer)
