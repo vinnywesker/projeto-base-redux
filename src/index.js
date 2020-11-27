@@ -6,7 +6,7 @@ import store from './Reducer'
 
 import { Provider } from 'react-redux'
 
-ReactDOM.render(//isso aqui vai integrar o estado entre o react e o redux
+ReactDOM.render(
   <Provider store={store}> 
     <App />
   </Provider>,

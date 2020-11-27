@@ -7,9 +7,10 @@ export function setText(tipo, texto) {
     }
 }
 
-const initialState = { 
-    textTitulo: 'Vinicius e fodao', 
-    textMensagem: 'Ele aprendeu REDUX'  
+const initialState = {
+    textTitulo: 'Titulo',
+    textMensagem: 'Mensagem',
+    numero: 0
 } // precisa colocar o nome do objeto
 
 function reducer(state = initialState, action) {
@@ -18,6 +19,8 @@ function reducer(state = initialState, action) {
             return { ...state, textTitulo: action.text }
         case 'SET_TEXT_M':
             return { ...state, textMensagem: action.text }
+        case 'NUMERO':
+            return { ...state, numero: action.text }
         default:
             return state
     }
